@@ -2,7 +2,8 @@ import React from 'react';
 import {Even} from './events'
 function App() {
   return (
-    <div>
+    <div className="container">
+      <h5>Text Viewer</h5>
       <Even/>
     </div>
   );
