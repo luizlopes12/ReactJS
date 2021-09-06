@@ -6,7 +6,6 @@ const clicked = () =>{
     res.innerText = text
     console.log(text)
 }
-
 const Even = () => {
   return (
     <Fragment>
