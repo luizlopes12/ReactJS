@@ -10,7 +10,7 @@ const Form = () =>{
         event.preventDefault();
     }
     const addName = () =>{
-       
+       console.log(name)
     }
     return(
         <Fragment>
