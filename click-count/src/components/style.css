@@ -1,0 +1,15 @@
+p{
+    text-align: center;
+    color: white;
+}
+button{
+    padding: 5px 15px;
+    margin: auto;
+}
+.cont{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 150px auto;
+}
