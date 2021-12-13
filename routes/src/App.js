@@ -4,25 +4,25 @@ import {Pag1} from './components/pag1'
 import {Pag2} from './components/pag2'
 import {Pag3} from './components/pag3'
 
-import {Route, BrowserRouter, Routes, Link } from "react-router-dom";
-function App(props) {
-  console.log(props)
+import {Route, BrowserRouter as Router, Routes, Link, useNavigate } from "react-router-dom";
+function App() {
+  // const navigate = useNavigate();
   return (
     <div>
     <Header/>
-    <BrowserRouter>
+    <Router>
     <Link to='/'>Home</Link>
     <Link to='/pag2'>Sobre</Link>
     <Link to='/pag3'>Produtos</Link>
-    {/* <button onClick={(props)=>{
-      props.history.goBack();
+    {/* <button onClick={()=>{
+      navigate(-1);
     }}>Voltar</button> */}
     <Routes>
     <Route path="/" element={<Pag1 />}></Route>
     <Route path="/pag2" element={<Pag2 />}></Route>
     <Route path="/pag3" element={<Pag3 />}></Route>
     </Routes>
-    </BrowserRouter>
+    </Router>
     </div>
   );
 }
