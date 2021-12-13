@@ -5,7 +5,8 @@ import {Pag2} from './components/pag2'
 import {Pag3} from './components/pag3'
 
 import {Route, BrowserRouter, Routes, Link } from "react-router-dom";
-function App() {
+function App(props) {
+  console.log(props)
   return (
     <div>
     <Header/>
@@ -13,6 +14,9 @@ function App() {
     <Link to='/'>Home</Link>
     <Link to='/pag2'>Sobre</Link>
     <Link to='/pag3'>Produtos</Link>
+    {/* <button onClick={(props)=>{
+      props.history.goBack();
+    }}>Voltar</button> */}
     <Routes>
     <Route path="/" element={<Pag1 />}></Route>
     <Route path="/pag2" element={<Pag2 />}></Route>
