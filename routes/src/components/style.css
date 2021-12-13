@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+}
+.pag{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 200px;
+    font-size: 3em;
+}
+.num1{
+    background-color: blue;
+}
+.num2{
+    background-color: yellow;
+}
+.num3{
+    background-color: green;
+}
