@@ -4,9 +4,12 @@ import {Pag1} from './components/pag1'
 import {Pag2} from './components/pag2'
 import {Pag3} from './components/pag3'
 
-import {Route, BrowserRouter as Router, Routes, Link, useNavigate } from "react-router-dom";
+import {Route, BrowserRouter as Router, Routes, Link, useNavigate  } from "react-router-dom";
 function App() {
-  // const navigate = useNavigate();
+  // const history = useNavigate();
+  // const voltar = () =>{
+  //   history.goBack();
+  // }
   return (
     <div>
     <Header/>
@@ -14,9 +17,7 @@ function App() {
     <Link to='/'>Home</Link>
     <Link to='/pag2'>Sobre</Link>
     <Link to='/pag3'>Produtos</Link>
-    {/* <button onClick={()=>{
-      navigate(-1);
-    }}>Voltar</button> */}
+    {/* <button onClick={useNavigate.push()}>Voltar</button> */}
     <Routes>
     <Route path="/" element={<Pag1 />}></Route>
     <Route path="/pag2" element={<Pag2 />}></Route>
