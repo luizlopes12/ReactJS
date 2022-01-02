@@ -4,7 +4,7 @@ function App() {
   const [estado, setEstado] = useState('Entrada')
   //palpite
   const [palpite, setPalpite] = useState(150)
-
+  const [numPalpites, setNumPalpites] = useState(1)
   const iniciarJogo = () =>{
     setEstado('Rodando')
   }
