@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, {useState} from 'react'
 function App() {
+  //Estados: entrada, rodando, fim
+  const [estado, setEstado] = useState('Entrada')
+  const iniciarJogo = () =>{
+    setEstado('Rodando')
+  }
+  if(estado == 'Entrada'){
+    return <button>Começar a jogar</button>
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <button>Menor</button>
+    <button>Acertou</button>
+    <button>Maior</button>
+
     </div>
   );
 }
