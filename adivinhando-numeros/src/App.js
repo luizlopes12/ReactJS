@@ -5,6 +5,8 @@ function App() {
   //palpite
   const [palpite, setPalpite] = useState(150)
   const [numPalpites, setNumPalpites] = useState(1)
+  const [min, setMin] = useState(0)
+  const [max, setMax] = useState(300)
   const iniciarJogo = () =>{
     setEstado('Rodando')
   }
