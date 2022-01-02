@@ -10,13 +10,18 @@ function App() {
   const iniciarJogo = () =>{
     setEstado('Rodando')
   }
+  const menor = () =>{
+    setNumPalpites(numPalpites+1)
+    setMax(palpite)
+    const proximo = parseInt((palpite-min)/2)
+  }
   if(estado == 'Entrada'){
     return <button onClick={iniciarJogo}>Começar a jogar</button>
   }
   return (
     <div className="App">
     <p>O seu número é {palpite}?</p>
-    <button>Menor</button>
+    <button onClick={menor}>Menor</button>
     <button>Acertou</button>
     <button>Maior</button>
 
