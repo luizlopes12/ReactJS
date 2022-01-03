@@ -9,9 +9,12 @@ import React, {useState, useEffect} from 'react'
     )
   }
   const Tempo = (props) =>{
+    const tempo = props.tempo
+    const min = Math.ceil(tempo/60)
+    const sec = tempo%60
     return(
     <p>
-    {props.tempo}<br/>
+    {`${min}:${sec}`}<br/>
     Tempo médio por volta
     </p>
     )
@@ -19,12 +22,24 @@ import React, {useState, useEffect} from 'react'
   const Button = (props)=> <button onClick={props.action}>{props.text}</button>
   function App() {
   const [numVoltas, setVoltas] = useState(0)
+  const [running, setRunning] = useState(false)
   const [tempo, setTempo] = useState(0)
   useEffect(()=>{
-    setInterval(()=>{
-      console.log('opa')
-    },1000)
-  },[])
+    let timer = null
+    if(running){
+     timer = setInterval(()=>{
+        setTempo(old => old+1)
+      },1000)
+    }
+    return () =>{
+      if(timer){
+        clearInterval(timer)
+      }
+    }
+  },[running])
+  const toggleRunning = () =>{
+    setRunning(!running)
+  }
   const increment = () =>{
     setVoltas(numVoltas+1)
   }
@@ -37,7 +52,7 @@ import React, {useState, useEffect} from 'react'
     <Button text='+' action={increment}/>
     <Button text='-' action={decrement}/>
     <Tempo tempo={tempo}/>
-    <Button text='Iniciar'/>
+    <Button action={toggleRunning} text='Iniciar'/>
     <Button text='Reiniciar'/>
     </div>
   )
