@@ -12,9 +12,11 @@ import React, {useState, useEffect} from 'react'
     const tempo = props.tempo
     const min = Math.round(tempo/60)
     const sec = tempo%60
+    const minStr = min < 10? '0'+min: min
+    const secStr = sec < 10? '0'+sec: sec
     return(
     <p>
-    {`${min}:${sec}`}<br/>
+    {`${minStr}:${secStr}`}<br/>
     Tempo médio por volta
     </p>
     )
@@ -51,7 +53,10 @@ import React, {useState, useEffect} from 'react'
     <MostraVoltas voltas={numVoltas}/>
     <Button text='+' action={increment}/>
     <Button text='-' action={decrement}/>
-    <Tempo tempo={tempo}/>
+    {
+      numVoltas > 0 &&
+      <Tempo tempo={tempo/numVoltas}/>
+    }
     <Button action={toggleRunning} text='Iniciar'/>
     <Button text='Reiniciar'/>
     </div>
