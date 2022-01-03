@@ -48,6 +48,10 @@ import React, {useState, useEffect} from 'react'
   const decrement = () =>{
     setVoltas(numVoltas-1)
   }
+  const reset = () =>{
+    setTempo(0)
+    setVoltas(0)
+  }
   return (
     <div className='App'>
     <MostraVoltas voltas={numVoltas}/>
@@ -55,10 +59,10 @@ import React, {useState, useEffect} from 'react'
     <Button text='-' action={decrement}/>
     {
       numVoltas > 0 &&
-      <Tempo tempo={tempo/numVoltas}/>
+      <Tempo tempo={Math.round(tempo/numVoltas)}/>
     }
     <Button action={toggleRunning} text='Iniciar'/>
-    <Button text='Reiniciar'/>
+    <Button action={reset} text='Reiniciar'/>
     </div>
   )
 }
