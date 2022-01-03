@@ -10,7 +10,7 @@ import React, {useState, useEffect} from 'react'
   }
   const Tempo = (props) =>{
     const tempo = props.tempo
-    const min = Math.ceil(tempo/60)
+    const min = Math.round(tempo/60)
     const sec = tempo%60
     return(
     <p>
