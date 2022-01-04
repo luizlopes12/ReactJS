@@ -1,10 +1,11 @@
 import React from 'react'
 import Header from './components/Header'
-import { 
-  BrowserRouter as Router,
-  Route
+import {
+  Route, 
+  BrowserRouter as Router, 
+  Routes
+} from "react-router-dom";
 
-} from 'react-router-dom'
 const Home = () =>{
   return <h1>Home</h1>
 }
@@ -13,14 +14,15 @@ const Generos = () =>{
 }
 function App() {
   return (
-
-    <div>
     <Router>
+    <div>
     <Header/>
-    <Route exact path='/' component={Home}/>
-    </Router>
+    <Routes>
+    <Route path='/' exact element={<Home/>}/>
+    <Route path='/Generos' exact element={<Generos/>}/>
+    </Routes>
     </div>
-    
+    </Router>
   );
 }
 
