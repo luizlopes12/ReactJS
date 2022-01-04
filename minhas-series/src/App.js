@@ -1,40 +1,26 @@
-import React, {useState} from 'react'
-import {
-  Navbar,
-  NavbarBrand,
-  Collapse,
-  Nav,
-  NavItem,
-  NavLink,
-  NavbarToggler
-} from 'reactstrap'
+import React from 'react'
+import Header from './components/Header'
+import { 
+  BrowserRouter as Router,
+  Route
 
-const Header = () =>{
-  const [open, setOpen] = useState(false)
-  const toggle = () =>{
-    setOpen(!open)
-  }
-  
-  return (
-    <div>
-      <Navbar color='light' light expand='md'>
-        <NavbarBrand>Minhas Séries</NavbarBrand>
-        <NavbarToggler onClick={toggle}/>
-          <Collapse isOpen={open} navbar>
-            <Nav className='ml-auto' navbar>
-            <NavItem>
-              <NavLink href='/'>Gêneros</NavLink>            
-            </NavItem>
-            </Nav>
-          </Collapse>
-      </Navbar>
-    </div>
-  );
+} from 'react-router-dom'
+const Home = () =>{
+  return <h1>Home</h1>
 }
-
+const Generos = () =>{
+  return <h1>Generos</h1>
+}
 function App() {
   return (
+
+    <div>
+    <Router>
     <Header/>
+    <Route exact path='/' component={Home}/>
+    </Router>
+    </div>
+    
   );
 }
 
