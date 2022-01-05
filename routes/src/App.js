@@ -3,7 +3,7 @@ import {React, Fragment} from 'react';
 import {Pag1} from './components/pag1'
 import {Pag2} from './components/pag2'
 import {Pag3} from './components/pag3'
-
+import './style.css'
 import {Route, BrowserRouter as Router, Routes, Link, useNavigate  } from "react-router-dom";
 function App() {
   // const history = useNavigate();
@@ -14,9 +14,11 @@ function App() {
     <div>
     <Header/>
     <Router>
+    <div className="navbar">
     <Link to='/'>Home</Link>
     <Link to='/pag2'>Sobre</Link>
     <Link to='/pag3'>Produtos</Link>
+    </div>
     {/* <button onClick={useNavigate.push()}>Voltar</button> */}
     <Routes>
     <Route path="/" element={<Pag1 />}></Route>
